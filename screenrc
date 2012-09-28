@@ -1,0 +1,13 @@
+startup_message off
+
+# fullscreen things like vim should go away when they're closed
+altscreen on
+
+vbell off
+
+# tabs
+hardstatus alwayslastline 
+hardstatus string '%{= gK}%-Lw%{= BW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-='
+#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-='
+
+term screen-256color
