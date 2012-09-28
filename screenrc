@@ -8,6 +8,3 @@ vbell off
 # tabs
 hardstatus alwayslastline 
 hardstatus string '%{= gK}%-Lw%{= BW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-='
-#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-='
-
-term screen-256color

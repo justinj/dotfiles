@@ -11,12 +11,6 @@ set clipboard=unnamed
 filetype on
 filetype indent on
 
-" Control-R => Run current file
-noremap <C-R> :w<Enter>:!./%<Enter>
-
-" Control-A => Run tests
-noremap <C-A> :w<Enter>:!rspec .<Enter>
-
 " Control-Z => Save
 noremap <C-Z> :w<Enter>
 
