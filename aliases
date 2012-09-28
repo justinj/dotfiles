@@ -1,0 +1,2 @@
+alias cpi="xclip -i -selection clipboard"
+alias cpo="xclip -o -selection clipboard"
