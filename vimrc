@@ -1,8 +1,13 @@
+call pathogen#infect()
+
 set ts=2
 set expandtab
 set number
 set incsearch
+set showcmd
 syntax on
+
+let mapleader = ","
 
 set smartcase
 set smartindent
@@ -14,6 +19,7 @@ filetype indent on
 " Control-Z => Save
 noremap <C-Z> :w<Enter>
 
+inoremap jk <ESC>
 
 " Splits navigation
 noremap <C-H> <C-W>h
