@@ -8,13 +8,12 @@ source $ZSH/oh-my-zsh.sh
 
 source /etc/profile
 export PATH=$PATH/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/kde/bin:/usr/bin/core_perl:/opt/qt/bin:/home/justin/.gem/ruby/1.9.1/bin
-#export PATH=$PATH:/usr/local/games
 export EDITOR=vim
 
 source ~/.aliases
-if [ -f ~/.localaliases ]; do
+if [ -f ~/.localaliases ]; then
   source ~/.localaliases
-done
+fi
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
