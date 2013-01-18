@@ -2,18 +2,18 @@ call pathogen#infect()
 
 set ts=2
 set expandtab
+" line numbers
 set number
 set incsearch
+set ignorecase
 set showcmd
+" buffer between cursor and scroll
 set scrolloff=3
 syntax on
-
-let mapleader = ","
 
 set smartcase
 set smartindent
 set shiftwidth=2
-set clipboard=unnamed
 filetype on
 filetype plugin on
 filetype indent on
