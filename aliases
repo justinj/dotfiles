@@ -1,2 +1,2 @@
-alias -g cpi="xclip -i -selection clipboard"
-alias -g cpo="xclip -o -selection clipboard"
+alias -g pbc="xclip -i -selection clipboard"
+alias -g pbp="xclip -o -selection clipboard"
