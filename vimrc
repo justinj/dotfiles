@@ -32,3 +32,5 @@ noremap <C-K> <C-W>k
 noremap <C-L> <C-W>l
 
 let NERDTreeIgnore = ['**/*\.[od]$']
+nnoremap <silent> + :exe "resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> - :exe "resize " . (winwidth(0) * 2/3)<CR>
