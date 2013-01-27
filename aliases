@@ -1,2 +1,4 @@
 alias -g pbc="xclip -i -selection clipboard"
 alias -g pbp="xclip -o -selection clipboard"
+
+alias la="ls -a"
