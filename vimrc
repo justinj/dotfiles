@@ -35,3 +35,7 @@ noremap <C-L> <C-W>l
 let NERDTreeIgnore = ['**/*\.{[od],pyc}$']
 nnoremap <silent> + :exe "resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winwidth(0) * 2/3)<CR>
+
+" Project-specific .vimrc files.
+set exrc
+set secure
