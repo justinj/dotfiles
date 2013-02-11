@@ -36,6 +36,7 @@ let NERDTreeIgnore = ['**/*\.{[od],pyc}$']
 nnoremap <silent> + :exe "resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winwidth(0) * 2/3)<CR>
 
+" <Right> to mathematically evaluate the current line
 inoremap <Right> <Esc>V:!bc -l<Enter>
 noremap <Right> V:!bc -l<Enter>
 
