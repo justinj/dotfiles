@@ -5,6 +5,7 @@ set expandtab
 " line numbers
 set number
 set incsearch
+set hlsearch
 set ignorecase
 set showcmd
 " buffer between cursor and scroll
@@ -31,6 +32,6 @@ noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-L> <C-W>l
 
-let NERDTreeIgnore = ['**/*\.[od]$']
+let NERDTreeIgnore = ['**/*\.{[od],pyc}$']
 nnoremap <silent> + :exe "resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winwidth(0) * 2/3)<CR>
