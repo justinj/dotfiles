@@ -9,7 +9,7 @@ set hlsearch
 set ignorecase
 set showcmd
 " buffer between cursor and scroll
-set scrolloff=3
+set scrolloff=10
 syntax on
 
 set smartcase
@@ -18,6 +18,8 @@ set shiftwidth=2
 filetype on
 filetype plugin on
 filetype indent on
+
+
 
 set directory=$HOME/.vim/tmp//,.
 
@@ -38,9 +40,23 @@ let NERDTreeIgnore = ['**/*\.{[od],pyc}$']
 nnoremap <silent> + :exe "resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winwidth(0) * 2/3)<CR>
 
-" <Right> to mathematically evaluate the current line
-inoremap <Right> <Esc>V:!bc -l<Enter>
-noremap <Right> V:!bc -l<Enter>
+noremap <Left> <NOP>
+noremap <Down> <NOP>
+noremap <Up> <NOP>
+noremap <Right> <NOP>
+
+" Just an experiment
+
+noremap h <NOP>
+noremap l <NOP>
+
+let mapleader = ","
+
+map <Leader>r :wa<Enter>:!rspec .<Enter>
+map <Leader>R :wa<Enter>:!rspec . -e 
+
+map <Leader>l :wa<Enter>:!rspec . -e<Up><Enter>
+
 
 " Project-specific .vimrc files.
 set exrc
