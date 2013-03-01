@@ -18,7 +18,7 @@ task :install do
         overwrite_all = true
       end
     end
-    rm destination if File.exists? destination
-    sh "ln -s ~/.dotfiles/#{source} ~/.#{name}"
+    rm_r destination if File.exists? destination
+    sh "ln -s ~/.dotfiles/#{source} #{destination}"
   end
 end
