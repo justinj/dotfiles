@@ -14,6 +14,8 @@ Bundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on     " required!
 
+autocmd! BufWritePost ~/.vimrc so ~/.vimrc
+
 set ts=2
 set expandtab
 " line numbers
