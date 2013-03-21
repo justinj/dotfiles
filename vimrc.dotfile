@@ -73,6 +73,7 @@ map <Leader>R :wa<Enter>:!rspec . -e
 
 map <Leader>l :wa<Enter>:!rspec . -e<Up><Enter>
 
+map <Leader>n :NERDTreeToggle<Enter>
 
 " Project-specific .vimrc files.
 set exrc
