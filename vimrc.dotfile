@@ -11,8 +11,28 @@ Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on     " required!
+
+let mapleader = ","
+
+" == Leader ==
+
+" general
+map <Leader>q :w<Enter>:!./%<Enter>
+
+" ruby
+map <Leader>rr :wa<Enter>:!rspec .<Enter>
+map <Leader>rR :wa<Enter>:!rspec . -e 
+map <Leader>rl :wa<Enter>:!rspec . -e<Up><Enter>
+map <Leader>ra :wa<Enter>:!rake<Enter>
+map <Leader>rb :wa<Enter>:!IRBRC=%; irb<Enter>
+
+" nerdtree
+map <Leader>n :NERDTreeToggle<Enter>
+
+" == == 
 
 set ts=2
 set expandtab
@@ -49,6 +69,8 @@ noremap <C-L> <C-W>l
 noremap j gj
 noremap k gk
 
+noremap "" :noh<Enter>
+
 
 let NERDTreeIgnore = ['**/*\.{[od],pyc}$']
 nnoremap <silent> + :exe "resize " . (winwidth(0) * 3/2)<CR>
@@ -61,17 +83,12 @@ noremap <Right> <NOP>
 
 " Just an experiment
 
-noremap h <NOP>
-noremap l <NOP>
-
-let mapleader = ","
-
-map <Leader>r :wa<Enter>:!rspec .<Enter>
-map <Leader>R :wa<Enter>:!rspec . -e 
-
-map <Leader>l :wa<Enter>:!rspec . -e<Up><Enter>
+" noremap h <NOP>
+" noremap l <NOP>
 
 
 " Project-specific .vimrc files.
 set exrc
 set secure
+
+colors koehler
