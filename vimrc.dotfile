@@ -33,6 +33,11 @@ map <Leader>rb :wa<Enter>:!IRBRC=%; irb<Enter>
 map <Leader>n :NERDTreeToggle<Enter>
 
 " == == 
+Bundle 'tpope/vim-surround'
+
+filetype plugin indent on     " required!
+
+autocmd! BufWritePost ~/.vimrc so ~/.vimrc
 
 set ts=2
 set expandtab
@@ -81,11 +86,14 @@ noremap <Down> <NOP>
 noremap <Up> <NOP>
 noremap <Right> <NOP>
 
+noremap "" :nohl<Enter>
+
 " Just an experiment
 
 " noremap h <NOP>
 " noremap l <NOP>
 
+map <Leader>n :NERDTreeToggle<Enter>
 
 " Project-specific .vimrc files.
 set exrc
