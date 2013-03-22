@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-surround'
 
 filetype plugin indent on     " required!
 
