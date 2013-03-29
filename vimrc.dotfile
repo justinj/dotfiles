@@ -1,5 +1,5 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -12,6 +12,9 @@ Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/VimClojure'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on     " required!
 
@@ -32,8 +35,8 @@ map <Leader>rb :wa<Enter>:!IRBRC=%; irb<Enter>
 " nerdtree
 map <Leader>n :NERDTreeToggle<Enter>
 
-" == == 
-Bundle 'tpope/vim-surround'
+" clojure
+map <Leader>cr :wa<Enter>:!lein test<Enter>
 
 filetype plugin indent on     " required!
 

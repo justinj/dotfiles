@@ -4,3 +4,4 @@ alias -g pbp="xclip -o -selection clipboard"
 alias la="ls -a"
 
 alias ijs="node"
+alias clj="lein repl"
