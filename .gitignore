@@ -1,4 +1,4 @@
 *.swp
 **/.netrwhist
-vim/tmp
+vim.dotfile/tmp
 localaliases
