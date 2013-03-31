@@ -15,6 +15,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'kien/ctrlp.vim'
+Bundle 'nelstrom/vim-visual-star-search'
 
 filetype plugin indent on     " required!
 
@@ -37,6 +38,7 @@ map <Leader>n :NERDTreeToggle<Enter>
 
 " clojure
 map <Leader>cr :wa<Enter>:!lein test<Enter>
+map <Leader>cq :wa<Enter>:!lein run<Enter>
 
 filetype plugin indent on     " required!
 
@@ -64,9 +66,6 @@ filetype indent on
 
 
 set directory=$HOME/.vim/tmp//,.
-
-" Control-Z => Save
-noremap <C-Z> :w<Enter>
 
 " Splits navigation
 noremap <C-H> <C-W>h
