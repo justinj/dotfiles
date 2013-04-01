@@ -5,10 +5,6 @@ altscreen on
 
 vbell off
 
-# tabs
-hardstatus alwayslastline 
-hardstatus string '%{= gK}%-Lw%{= BW}%50>%n%f* %t%{= gK}%+Lw%< %{= kG}%-='
-
 # use <C-g> instead of <C-a>
 escape ^Gg
 
