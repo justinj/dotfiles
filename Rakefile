@@ -25,5 +25,5 @@ task :install do
   puts "Installing vundle..."
   sh "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
   puts "Running BundleInstall..."
-  sh "vim --noplugin -u ~/.vimrc +BundleInstall +qall"
+  sh "vim --noplugin +BundleInstall +qall"
 end
