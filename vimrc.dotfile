@@ -76,12 +76,7 @@ noremap <C-L> <C-W>l
 noremap j gj
 noremap k gk
 
-noremap "" :noh<Enter>
-
-
 let NERDTreeIgnore = ['**/*\.{[od],pyc}$']
-nnoremap <silent> + :exe "resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <silent> - :exe "resize " . (winwidth(0) * 2/3)<CR>
 
 noremap <Left> <NOP>
 noremap <Down> <NOP>
@@ -90,15 +85,13 @@ noremap <Right> <NOP>
 
 noremap "" :nohl<Enter>
 
-" Just an experiment
+" Some sometimes-useful letters
 
-" noremap h <NOP>
-" noremap l <NOP>
+imap \la λ
+
+noremap h <NOP>
+noremap l <NOP>
 
 map <Leader>n :NERDTreeToggle<Enter>
-
-" Project-specific .vimrc files.
-set exrc
-set secure
 
 colors koehler
