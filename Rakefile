@@ -21,4 +21,9 @@ task :install do
     rm_r destination if File.exists? destination
     sh "ln -s ~/.dotfiles/#{source} #{destination}"
   end
+
+  puts "Installing vundle..."
+  sh "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
+  puts "Running BundleInstall..."
+  sh "vim --noplugin -u ~/.vimrc +BundleInstall +qall"
 end
