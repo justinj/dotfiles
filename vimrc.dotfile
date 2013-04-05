@@ -6,14 +6,17 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'ervandew/supertab'
+Bundle 'guns/vim-clojure-static'
 Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/VimClojure'
 
 filetype plugin indent on
 
@@ -23,23 +26,27 @@ let mapleader = ","
 
 " --- general ---
 map <Leader>q :w<Enter>:!./%<Enter>
+map <Leader>m :bprev<cr>
+map <Leader>. :bnext<cr>
+map <Leader>ev :vsplit $MYVIMRC<cr>
 
 " --- ruby ---
-map <Leader>rr :wa<Enter>:!rspec .<Enter>
+map <Leader>re :wa<cr>:!rspec .<cr>
 " to specify a specific test
-map <Leader>rR :wa<Enter>:!rspec . -e 
+map <Leader>rR :wa<cr>:!rspec . -e 
 " to run the last specified specific test
-map <Leader>rl :wa<Enter>:!rspec . -e<Up><Enter>
-map <Leader>ra :wa<Enter>:!rake<Enter>
+map <Leader>rl :wa<Enter>:!rspec . -e<Up><cr>
+map <Leader>ra :wa<Enter>:!rake<cr>
 " open current file in irb
-map <Leader>rb :wa<Enter>:!IRBRC=%; irb<Enter>
+map <Leader>rb :wa<Enter>:!IRBRC=%; irb<cr>
 
 " --- nerdtree ---
-map <Leader>n :NERDTreeToggle<Enter>
+map <Leader>n :NERDTreeToggle<cr>
 
 " --- clojure ---
-map <Leader>cr :wa<Enter>:!lein test<Enter>
-map <Leader>cq :wa<Enter>:!lein run<Enter>
+map <Leader>cr :wa<Enter>:!lein test<cr>
+map <Leader>cq :wa<Enter>:!lein run<cr>
+map <Leader>cp :RainbowParenthesesToggle<cr>
 
 autocmd! BufWritePost ~/.vimrc so ~/.vimrc
 
@@ -92,8 +99,8 @@ noremap "" :nohl<Enter>
 
 imap \la λ
 
-noremap h <NOP>
-noremap l <NOP>
+" noremap h <NOP>
+" noremap l <NOP>
 
 map <Leader>n :NERDTreeToggle<Enter>
 
