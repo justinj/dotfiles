@@ -5,3 +5,11 @@ alias la="ls -a"
 
 alias ijs="node"
 alias clj="lein repl"
+
+function rinit() {
+  git init
+  rspec --init
+  mkdir lib
+  git add -A
+  git commit -m "Initial commit"
+}
