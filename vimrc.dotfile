@@ -13,40 +13,45 @@ Bundle 'guns/vim-clojure-static'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-surround'
+Bundle 'paradigm/TextObjectify'
+Bundle 'edsono/vim-matchit'
+Bundle 'jcf/vim-latex'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
-
-let mapleader = ","
 
 " == Leader ==
 
 " --- general ---
-map <Leader>q :w<Enter>:!./%<Enter>
-map <Leader>m :bprev<cr>
-map <Leader>. :bnext<cr>
-map <Leader>ev :vsplit $MYVIMRC<cr>
+noremap <Leader>q :w<Enter>:!./%<Enter>
+noremap <Leader>m :bprev<cr>
+noremap <Leader>. :bnext<cr>
+noremap <Leader>ev :vsplit $MYVIMRC<cr>
 
 " --- ruby ---
-map <Leader>re :wa<cr>:!rspec .<cr>
+noremap <Leader>re :wa<cr>:!rspec spec<cr>
+noremap <Leader>ri :wa<cr>:!rspec features<cr>
 " to specify a specific test
-map <Leader>rR :wa<cr>:!rspec . -e 
+noremap <Leader>rR :wa<cr>:!rspec . -e 
 " to run the last specified specific test
-map <Leader>rl :wa<Enter>:!rspec . -e<Up><cr>
-map <Leader>ra :wa<Enter>:!rake<cr>
+noremap <Leader>rl :wa<Enter>:!rspec . -e<Up><cr>
+noremap <Leader>ra :wa<Enter>:!rake<cr>
 " open current file in irb
-map <Leader>rb :wa<Enter>:!IRBRC=%; irb<cr>
+noremap <Leader>rb :wa<Enter>:!IRBRC=%; irb<cr>
 
 " --- nerdtree ---
-map <Leader>n :NERDTreeToggle<cr>
+noremap <Leader>n :NERDTreeToggle<cr>
 
 " --- clojure ---
-map <Leader>cr :wa<Enter>:!lein test<cr>
-map <Leader>cq :wa<Enter>:!lein run<cr>
-map <Leader>cp :RainbowParenthesesToggle<cr>
+noremap <Leader>cr :wa<Enter>:!lein test<cr>
+noremap <Leader>cq :wa<Enter>:!lein run<cr>
+noremap <Leader>cp :RainbowParenthesesToggle<cr>
+
+" --- fugitive ---
+noremap <Leader>gs :Gstatus<cr>
 
 autocmd! BufWritePost ~/.vimrc so ~/.vimrc
 
@@ -62,12 +67,15 @@ set ignorecase
 set showcmd
 " buffer between cursor and scroll
 set scrolloff=10
+" smoother C-U/C-D
+set scroll=15
 
 syntax on
 
 set smartcase
 set smartindent
 set shiftwidth=2
+set laststatus=2
 filetype on
 filetype plugin on
 filetype indent on
@@ -95,13 +103,9 @@ noremap <Right> <NOP>
 " clear highlights after search
 noremap "" :nohl<Enter>
 
-" Some sometimes-useful letters
-
-imap \la λ
-
 " noremap h <NOP>
 " noremap l <NOP>
 
-map <Leader>n :NERDTreeToggle<Enter>
+noremap <Leader>n :NERDTreeToggle<Enter>
 
 colors koehler
