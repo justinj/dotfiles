@@ -1,0 +1,1 @@
+make install script give an error if .dotfiles wasn't installed to home directory
