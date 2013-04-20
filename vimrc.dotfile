@@ -45,9 +45,6 @@ noremap <Leader>ra :wa<Enter>:!rake<cr>
 " open current file in irb
 noremap <Leader>rb :wa<Enter>:!IRBRC=%; irb<cr>
 
-" --- nerdtree ---
-noremap <Leader>n :NERDTreeToggle<cr>
-
 " --- clojure ---
 noremap <Leader>cr :wa<Enter>:!lein test<cr>
 noremap <Leader>cq :wa<Enter>:!lein run<cr>
