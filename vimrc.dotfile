@@ -95,20 +95,8 @@ noremap <C-L> <C-W>l
 noremap j gj
 noremap k gk
 
-let NERDTreeIgnore = ['**/*\.{[od],pyc}$']
-
-noremap <Left> <NOP>
-noremap <Down> <NOP>
-noremap <Up> <NOP>
-noremap <Right> <NOP>
-
 " clear highlights after search
 noremap "" :nohl<Enter>
-
-" noremap h <NOP>
-" noremap l <NOP>
-
-noremap <Leader>n :NERDTreeToggle<Enter>
 
 " why can't I just set monokai? :/ TODO figure this out
 colors inkpot
