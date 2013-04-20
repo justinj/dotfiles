@@ -13,3 +13,8 @@ function rinit() {
   git add -A
   git commit -m "Initial commit"
 }
+
+alias g="git status"
+alias gl="git pull"
+alias gp="git push"
+alias gd="git diff"

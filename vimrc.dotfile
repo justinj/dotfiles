@@ -8,18 +8,21 @@ Bundle 'gmarik/vundle'
 
 Bundle 'airblade/vim-gitgutter'
 Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
 Bundle 'guns/vim-clojure-static'
+Bundle 'jcf/vim-latex'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'paradigm/TextObjectify'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-surround'
-Bundle 'paradigm/TextObjectify'
-Bundle 'edsono/vim-matchit'
-Bundle 'jcf/vim-latex'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'godlygeek/tabular'
+
+Bundle 'sickill/vim-monokai.git'
 
 filetype plugin indent on
 
@@ -110,4 +113,6 @@ noremap "" :nohl<Enter>
 
 noremap <Leader>n :NERDTreeToggle<Enter>
 
-colors koehler
+" why can't I just set monokai? :/ TODO figure this out
+colors inkpot
+colors Monokai
