@@ -8,9 +8,6 @@ source ~/.zsh/theme.zsh-theme
 export PATH=$PATH/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/kde/bin:/usr/bin/core_perl:/opt/qt/bin:/home/justin/.gem/ruby/1.9.1/bin
 export EDITOR=vim
 
-alias vim="stty stop '' -ixoff ; vim"
-ttyctl -f
-
 set -o emacs
 
 # Use ^X^E to edit the current command line in Vim
