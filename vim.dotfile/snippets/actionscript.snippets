@@ -1,0 +1,66 @@
+snippet update
+	override public function update():void {
+		${1}
+		super.update();
+	}
+snippet render
+	override public function render():void {
+		${1}
+		super.render();
+	}
+snippet ent
+	package
+	{
+		import net.flashpunk.Entity
+		import net.flashpunk.FP;
+
+		public class ${1:name} extends Entity
+		{
+			public function $1() {
+			}
+
+			override public function update():void {
+				super.update();
+			}
+			
+			override public function render():void {
+				super.render();
+			}
+		}
+	}
+snippet wor
+	package
+	{
+		import net.flashpunk.World
+		import net.flashpunk.FP;
+
+		public class ${1:name} extends World
+		{
+			public function $1() {
+			}
+
+			override public function begin():void {
+				super.begin();
+			}
+			
+			override public function end():void {
+				super.end();
+			}
+			
+			override public function update():void {
+				super.update();
+			}
+			
+			override public function render():void {
+				super.render();
+			}
+		}
+	}
+snippet t=
+	this.${1:name} = $1;
+snippet fpi
+	import net.flashpunk.${1}
+snippet alarm
+	addTween(new Alarm(${1}, function():void {
+		${2}
+	}), true);

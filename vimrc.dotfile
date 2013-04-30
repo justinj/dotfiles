@@ -7,20 +7,24 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'airblade/vim-gitgutter'
-Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'edsono/vim-matchit'
-Bundle 'ervandew/supertab'
-Bundle 'guns/vim-clojure-static'
-Bundle 'jcf/vim-latex'
+Bundle 'jeroenbourgois/vim-actionscript'
 Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'paradigm/TextObjectify'
+Bundle 'vim-scripts/VimClojure'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-abolish'
+Bundle 'rking/ag.vim'
+
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/vim-snippets"
+Bundle "garbas/vim-snipmate"
 
 Bundle 'sickill/vim-monokai.git'
 
@@ -41,21 +45,24 @@ noremap <Leader>ri :wa<cr>:!rspec features<cr>
 noremap <Leader>rR :wa<cr>:!rspec . -e 
 " to run the last specified specific test
 noremap <Leader>rl :wa<Enter>:!rspec . -e<Up><cr>
-noremap <Leader>ra :wa<Enter>:!rake<cr>
+noremap <Leader>ra :wa<cr>:Rake<cr>
 " open current file in irb
 noremap <Leader>rb :wa<Enter>:!IRBRC=%; irb<cr>
 
 " --- clojure ---
 noremap <Leader>cr :wa<Enter>:!lein test<cr>
 noremap <Leader>cq :wa<Enter>:!lein run<cr>
-noremap <Leader>cp :RainbowParenthesesToggle<cr>
 
 " --- fugitive ---
 noremap <Leader>gs :Gstatus<cr>
 noremap <Leader>gc :Gcommit<cr>
 noremap <Leader>gd :Gdiff<cr>
 
+" --- markdown ---
+noremap <Leader>md :w !markdown > output.html; chromium output.html; rm output.html<cr><cr>
+
 autocmd! BufWritePost ~/.vimrc so ~/.vimrc
+
 
 set ts=2
 set expandtab
@@ -73,6 +80,7 @@ set scrolloff=10
 set scroll=15
 
 syntax on
+set hidden
 
 set smartcase
 set smartindent
@@ -97,6 +105,8 @@ noremap k gk
 
 " clear highlights after search
 noremap "" :nohl<Enter>
+
+let mapleader = ","
 
 " why can't I just set monokai? :/ TODO figure this out
 colors inkpot
