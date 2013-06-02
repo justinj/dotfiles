@@ -14,8 +14,8 @@ Bundle 'edsono/vim-matchit'
 Bundle 'jeroenbourgois/vim-actionscript'
 Bundle 'kien/ctrlp.vim'
 Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'vim-scripts/VimClojure'
 Bundle 'godlygeek/tabular'
+Bundle 'guns/vim-clojure-static'
 
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fireplace'
@@ -23,9 +23,15 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+
+" note to self - this makes vim take a long time to start up
+" it might be worthwhile to use nREPL instead if this gets annoying
+Bundle 'tpope/vim-classpath'
 
 Bundle 'rking/ag.vim'
-
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/vim-snippets"
@@ -48,12 +54,13 @@ noremap <C-L> <C-W>l
 
 noremap j gj
 noremap k gk
+noremap Y y$
 
 " clear highlights after search
 noremap <cr> :nohl<cr><cr>
 
 " run current file
-noremap <Leader>q :w<Enter>:!./%<Enter>
+noremap <Leader>q :wa<Enter>:!./%<Enter>
 noremap <Leader>ev :vsplit $MYVIMRC<cr>
 
 " }}}
@@ -63,11 +70,13 @@ noremap <Leader>ri :wa<cr>:!rspec features<cr>
 " to specify a specific test
 noremap <Leader>rR :wa<cr>:!rspec . -e 
 noremap <Leader>ra :wa<cr>:Rake<cr>
+noremap <leader>t :wa<cr>:Rake test<cr>
 
 " }}}
 " --- clojure --- {{{
 noremap <Leader>cr :wa<Enter>:!lein test<cr>
-noremap <Leader>cq :wa<Enter>:!lein run<cr>
+noremap <Leader>cq :wa<Enter>:!time lein run<cr>
+noremap <Leader>ce :Eval<cr>
 
 " }}}
 " --- fugitive --- {{{
@@ -75,6 +84,10 @@ noremap <Leader>gs :Gstatus<cr>
 noremap <Leader>gc :Gcommit<cr>
 noremap <Leader>gd :Gdiff<cr>
 
+" }}}
+
+" --- Latex --- {{{
+noremap <Leader>la :wa<cr>:!pdflatex %;evince %:r.pdf<cr><cr>
 " }}}
 " }}}
 

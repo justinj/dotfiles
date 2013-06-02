@@ -1,7 +1,10 @@
-alias -g pbc="xclip -i -selection clipboard"
-alias -g pbp="xclip -o -selection clipboard"
+alias pbcopy="xclip -i -selection clipboard"
+alias pbpaste="xclip -o -selection clipboard"
+alias pbc=pbcopy
+alias pbp=pbpaste
 
 alias la="ls -a"
+alias l="ls -1"
 
 alias ijs="node"
 alias clj="lein repl"
@@ -13,6 +16,16 @@ function rinit() {
   git add -A
   git commit -m "Initial commit"
 }
+
+alias mai="fg %1"
+alias oth="fg %2"
+
+alias emacs="emacs -nw"
+
+alias ..="cd .."
+alias ...="cd ..."
+alias ....="cd ...."
+alias .....="cd ....."
 
 alias g="git status"
 alias gl="git pull"
