@@ -6,7 +6,7 @@ alias pbp=pbpaste
 alias la="ls -a"
 alias l="ls -1"
 
-alias ijs="node"
+alias ijs="nodejs"
 alias clj="lein repl"
 
 function rinit() {
@@ -33,3 +33,6 @@ alias gp="git push"
 alias gd="git diff"
 alias gcm="git commit -m"
 alias gad="git add -A"
+
+alias ef="exercism fetch"
+alias rc="cd projects/rcdb/; tmux"

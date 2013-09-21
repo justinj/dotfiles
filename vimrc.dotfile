@@ -9,6 +9,8 @@ autocmd! BufWritePost ~/.vimrc so ~/.vimrc
 
 Bundle 'gmarik/vundle'
 
+Bundle 'bling/vim-airline.git'
+Bundle 'yonchu/accelerated-smooth-scroll'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'edsono/vim-matchit'
 Bundle 'jeroenbourgois/vim-actionscript'
@@ -16,6 +18,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'kchmck/vim-coffee-script'
 
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fireplace'
@@ -26,18 +30,21 @@ Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-scriptease'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-tbone'
 
-" note to self - this makes vim take a long time to start up
-" it might be worthwhile to use nREPL instead if this gets annoying
-Bundle 'tpope/vim-classpath'
-
+Bundle 'Twinside/vim-hoogle'
 Bundle 'rking/ag.vim'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/vim-snippets"
 Bundle "garbas/vim-snipmate"
 
-Bundle 'sickill/vim-monokai.git'
+Bundle "elixir-lang/vim-elixir"
+Bundle "mattonrails/vim-mix"
+
+Bundle 'sickill/vim-monokai'
 
 " }}}
 
@@ -46,37 +53,64 @@ let mapleader = ","
 
 
 " --- general --- {{{
+augroup general
+  autocmd!
 " Splits navigation
-noremap <C-H> <C-W>h
-noremap <C-J> <C-W>j
-noremap <C-K> <C-W>k
-noremap <C-L> <C-W>l
+  noremap <C-H> <C-W>h
+  noremap <C-J> <C-W>j
+  noremap <C-K> <C-W>k
+  noremap <C-L> <C-W>l
 
-noremap j gj
-noremap k gk
-noremap Y y$
+  noremap j gj
+  noremap k gk
+  noremap Y y$
 
-" clear highlights after search
-noremap <cr> :nohl<cr><cr>
+  noremap <leader>s *N
 
-" run current file
-noremap <Leader>q :wa<Enter>:!./%<Enter>
-noremap <Leader>ev :vsplit $MYVIMRC<cr>
+  noremap <leader>n :next<cr>
 
+  " clear highlights after search
+  noremap <cr> :nohl<cr><cr>
+
+  noremap <Leader>q :wa<Enter>:!./%<Enter>
+  noremap <Leader>ev :vsplit $MYVIMRC<cr>
+  noremap <Leader>ct :r !date +"\%A, \%B \%d, \%Y"<cr>kJyypVr-
+  noremap <Leader>ra :w<cr>:Rake<cr>
+
+  noremap <Leader>f :noremap <Leader>f:wa<cr>
+augroup end
 " }}}
 " --- ruby --- {{{
-noremap <Leader>re :wa<cr>:!rspec spec<cr>
-noremap <Leader>ri :wa<cr>:!rspec features<cr>
-" to specify a specific test
-noremap <Leader>rR :wa<cr>:!rspec . -e 
-noremap <Leader>ra :wa<cr>:Rake<cr>
-noremap <leader>t :wa<cr>:Rake test<cr>
+augroup ruby
+  autocmd!
+  autocmd FileType ruby noremap <Leader>re :wa<cr>:!rspec spec<cr>
+  autocmd FileType ruby noremap <Leader>ri :wa<cr>:!rspec features<cr>
+  " to specify a specific test
+  autocmd FileType ruby noremap <Leader>rR :wa<cr>:!rspec . -e 
+  autocmd FileType ruby noremap <Leader>ra :wa<cr>:Rake<cr>
+  autocmd FileType ruby noremap <leader>t :wa<cr>:Rake test<cr>
+  autocmd FileType ruby noremap <leader>y :wa<cr>:Rake features<cr>
+  autocmd FileType ruby noremap <leader>q :wa<cr>:!ruby %<cr>
+  autocmd FileType ruby noremap <leader>gf :vs Gemfile<cr>
+augroup end
 
 " }}}
+
+" --- vim --- {{{
+augroup vim
+  autocmd!
+  autocmd FileType vim noremap <Leader>t :wa<cr>:Rake test<cr>
+augroup end
+" }}}
+
 " --- clojure --- {{{
-noremap <Leader>cr :wa<Enter>:!lein test<cr>
-noremap <Leader>cq :wa<Enter>:!time lein run<cr>
-noremap <Leader>ce :Eval<cr>
+augroup clojure
+  autocmd!
+  autocmd FileType clojure noremap <Leader>t :wa<Enter>:!lein test<cr>
+  autocmd FileType clojure noremap <Leader>q :wa<Enter>:!time lein run<cr>
+  autocmd FileType clojure noremap <Leader>e :Eval<cr>
+  autocmd FileType clojure noremap <Leader>w :w<cr>:%Eval<cr>
+augroup end
 
 " }}}
 " --- fugitive --- {{{
@@ -85,9 +119,20 @@ noremap <Leader>gc :Gcommit<cr>
 noremap <Leader>gd :Gdiff<cr>
 
 " }}}
+" --- elixir --- {{{
+augroup elixir
+  autocmd!
+  autocmd FileType elixir noremap <Leader>t :wa<cr>:Mtest<cr>
+  autocmd FileType elixir noremap <Leader>q :wa<cr>:!elixir %<cr>
+augroup end
+" }}}
 
 " --- Latex --- {{{
-noremap <Leader>la :wa<cr>:!pdflatex %;evince %:r.pdf<cr><cr>
+augroup latex
+  autocmd!
+  autocmd FileType tex noremap <Leader>m :wa<cr>:!pdflatex %&&evince %:r.pdf<cr><cr>
+  autocmd FileType tex map <Leader>s ysiw$
+augroup end
 " }}}
 " }}}
 
@@ -100,7 +145,6 @@ set incsearch
 set hlsearch
 set ignorecase
 set scrolloff=10
-set scroll=15
 set foldmethod=marker
 
 syntax on
@@ -118,3 +162,5 @@ set directory=$HOME/.vim/tmp//,.
 " }}}
 
 colors inkpot
+
+so ~/projects/vim/vim-beaker/plugin/beaker.vim
