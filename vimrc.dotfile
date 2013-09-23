@@ -10,16 +10,14 @@ autocmd! BufWritePost ~/.vimrc so ~/.vimrc
 Bundle 'gmarik/vundle'
 
 Bundle 'bling/vim-airline.git'
-Bundle 'yonchu/accelerated-smooth-scroll'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'edsono/vim-matchit'
 Bundle 'jeroenbourgois/vim-actionscript'
 Bundle 'kien/ctrlp.vim'
-Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fireplace'
@@ -30,11 +28,8 @@ Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-scriptease'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-tbone'
 
-Bundle 'Twinside/vim-hoogle'
 Bundle 'rking/ag.vim'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
