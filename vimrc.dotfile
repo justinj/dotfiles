@@ -137,6 +137,7 @@ augroup end
 set ts=2
 set expandtab
 set number
+set relativenumber
 set incsearch
 set hlsearch
 set ignorecase
