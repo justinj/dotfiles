@@ -17,6 +17,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 
 Bundle 'tpope/vim-commentary'
