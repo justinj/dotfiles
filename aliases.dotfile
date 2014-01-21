@@ -27,6 +27,8 @@ alias ...="cd ..."
 alias ....="cd ...."
 alias .....="cd ....."
 
+alias p="python -m SimpleHTTPServer"
+
 alias g="git status"
 alias gl="git pull"
 alias gp="git push"

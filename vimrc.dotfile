@@ -10,15 +10,19 @@ autocmd! BufWritePost ~/.vimrc so ~/.vimrc
 Bundle 'gmarik/vundle'
 
 Bundle 'bling/vim-airline.git'
-Bundle 'airblade/vim-gitgutter'
 Bundle 'edsono/vim-matchit'
 Bundle 'jeroenbourgois/vim-actionscript'
 Bundle 'kien/ctrlp.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'guns/vim-clojure-static'
+Bundle 'derekwyatt/vim-scala'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'pangloss/vim-javascript'
+Bundle 'groenewege/vim-less'
+Bundle 'mxw/vim-jsx'
+Bundle 'airblade/vim-gitgutter'
 
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fireplace'
@@ -51,6 +55,12 @@ let mapleader = ","
 " --- general --- {{{
 augroup general
   autocmd!
+
+" GitGutter
+   nmap [h <Plug>GitGutterPrevHunk
+   nmap ]h <Plug>GitGutterNextHunk
+
+
 " Splits navigation
   noremap <C-H> <C-W>h
   noremap <C-J> <C-W>j
@@ -76,6 +86,14 @@ augroup general
   noremap <Leader>f :noremap <Leader>f:wa<cr>
 augroup end
 " }}}
+" --- clisp --- {{{
+augroup lisp
+  autocmd!
+  autocmd FileType lisp noremap <Leader>q :wa<cr>:!clisp %<cr>
+augroup end
+"
+" }}}
+" 
 " --- ruby --- {{{
 augroup ruby
   autocmd!
@@ -90,6 +108,13 @@ augroup ruby
   autocmd FileType ruby noremap <leader>gf :vs Gemfile<cr>
 augroup end
 
+" }}}
+"
+" --- c --- {{{
+augroup c
+  autocmd!
+  autocmd FileType c noremap <Leader>q :!gcc % -o output<cr>:!./output<cr>
+augroup end
 " }}}
 
 " --- vim --- {{{
@@ -137,7 +162,6 @@ augroup end
 set ts=2
 set expandtab
 set number
-set relativenumber
 set incsearch
 set hlsearch
 set ignorecase
@@ -154,10 +178,16 @@ set laststatus=2
 filetype on
 filetype plugin on
 filetype indent on
-
-set directory=$HOME/.vim/tmp//,.
 " }}}
 
 colors inkpot
 
-so ~/projects/vim/vim-beaker/plugin/beaker.vim
+set textwidth=79
+set colorcolumn=80
+highlight ColorColumn ctermbg=7
+
+function! TodayTodo()
+  let date=system("date +\"%b%d-%y\"")
+  exec "vsplit ~/todo/".date
+endfunction
+noremap <leader>o :call TodayTodo()<cr>

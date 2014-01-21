@@ -1,0 +1,1 @@
+/home/justin/khan/devtools/khan-dotfiles/.vim/ftplugin/markdown.vim
