@@ -31,6 +31,7 @@ alias p="python -m SimpleHTTPServer"
 
 alias g="git status"
 alias gl="git pull"
+alias go="git log"
 alias gp="git push"
 alias gd="git diff"
 alias gcm="git commit -m"
