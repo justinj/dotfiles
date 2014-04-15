@@ -6,6 +6,7 @@ alias pbp=pbpaste
 alias emacs="emacs -nw"
 
 alias g="git status"
+alias g-="git checkout -"
 alias gl="git pull"
 alias go="git log"
 alias gp="git push"
