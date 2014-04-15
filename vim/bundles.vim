@@ -2,6 +2,8 @@ Bundle 'sjl/tslime2.vim'
 
 Bundle 'gmarik/vundle'
 
+Bundle 'dag/vim-fish'
+
 Bundle 'justinj/vim-textobj-reactprop'
 Bundle 'gaving/vim-textobj-argument'
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
@@ -31,9 +33,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-unimpaired'
 
-Bundle 'justinj/vim-respond'
-
-Bundle 'airblade/gitgutter'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'rking/ag.vim'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"

@@ -1,10 +1,12 @@
 set nocompatible
 filetype off
 
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 autocmd! BufWritePost ~/.vimrc so ~/.vimrc
 
+source ~/.vim/bundles.vim
 
 
 " == Mapping == {{{
@@ -149,14 +151,14 @@ noremap <leader>o :call TodayTodo()<cr>
 
 set shell=/bin/bash
 
-call textobj#user#plugin('jsregex', {
-\   'around': {
-\     'pattern': '\/[^\n]*\/[gimy]*',
-\     'select': ['ae']
-\   },
-\   'in': {
-\     'pattern': '\/\zs[^\n]*\ze\/[gimy]*',
-\     'select': ['ie']
-\   }
-\ })
-
+" call textobj#user#plugin('jsregex', {
+" \   'around': {
+" \     'pattern': '\/[^\n]*\/[gimy]*',
+" \     'select': ['ae']
+" \   },
+" \   'in': {
+" \     'pattern': '\/\zs[^\n]*\ze\/[gimy]*',
+" \     'select': ['ie']
+" \   }
+" \ })
+" 

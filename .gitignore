@@ -3,3 +3,4 @@
 vim.dotfile/tmp
 vim.dotfile/bundle
 localaliases
+fish/fish_history
