@@ -77,6 +77,7 @@ set laststatus=2
 filetype on
 filetype plugin on
 filetype indent on
+set completeopt=longest,menuopt
 
 set backspace=2
 set history=10000
