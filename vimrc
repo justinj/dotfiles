@@ -1,17 +1,34 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+
+packadd minpac
+call minpac#init()
+
+call minpac#add('gmarik/vundle')
+call minpac#add('bling/vim-airline')
+call minpac#add('kien/ctrlp.vim')
+call minpac#add('godlygeek/tabular')
+call minpac#add('tpope/vim-eunuch')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-abolish')
+call minpac#add('tpope/vim-markdown')
+call minpac#add('tpope/vim-repeat')
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-vinegar')
+call minpac#add('tpope/vim-projectionist')
+call minpac#add('rking/ag.vim')
+call minpac#add('fatih/vim-go')
 
 autocmd! BufWritePost ~/.vimrc so ~/.vimrc
-source ~/.vim/bundles.vim
 
 
 " == Mapping == {{{
 let mapleader = ","
 
 
-" --- general --- {{{
+" --- general ---
 augroup general
   autocmd!
 
@@ -22,30 +39,25 @@ augroup general
 
   noremap <Leader>ev :vsplit $MYVIMRC<cr>
 augroup end
-" }}}
-"
 
-" --- fugitive --- {{{
+" --- fugitive ---
 noremap <Leader>gs :Gstatus<cr>
-" }}}
 
-" --- Latex --- {{{
+" --- Latex ---
 augroup latex
   autocmd!
   autocmd FileType tex noremap <Leader>m :wa<cr>:!pdflatex %&&open %:r.pdf<cr><cr>
 augroup end
-" }}}
 
-" --- Go --- {{{
+" --- Go ---
 augroup go
   autocmd!
   autocmd FileType go noremap <Leader><Leader>t :GoInfo<cr>
 augroup end
-" }}}
 
 
 
-" == Basic Editing == {{{
+" == Basic Editing ==
 
 set noswapfile
 set ts=2
@@ -56,10 +68,8 @@ set hlsearch
 set ignorecase
 set scrolloff=10
 set foldmethod=marker
-
 syntax on
 set hidden
-
 set smartcase
 set smartindent
 set shiftwidth=2
@@ -67,7 +77,6 @@ set laststatus=2
 filetype on
 filetype plugin on
 filetype indent on
-" }}}
 
 set backspace=2
 set history=10000
