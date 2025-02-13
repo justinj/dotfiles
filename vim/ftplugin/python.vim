@@ -1,1 +1,0 @@
-/home/justin/khan/devtools/khan-dotfiles/.vim/ftplugin/python.vim
