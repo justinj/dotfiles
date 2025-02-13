@@ -1,0 +1,4 @@
+[alias]
+	co = checkout
+	st = status
+	last = for-each-ref --sort=-committerdate --count=20 --format='%(align:30,left)%(refname:short)%(end)%(committerdate:relative)' refs/heads/
