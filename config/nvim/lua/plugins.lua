@@ -1,9 +1,11 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.x",
+    version = "0.1.*",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+
+  { "folke/tokyonight.nvim" },
 
   { "stevearc/oil.nvim" },
 
