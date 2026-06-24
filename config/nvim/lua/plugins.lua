@@ -1,16 +1,22 @@
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+return {
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.x",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 
-  use({
+  { "stevearc/oil.nvim" },
+
+  { "nvim-mini/mini.diff" },
+
+  {
+    url = "https://tangled.org/ronshavit.com/mini.diff.jj",
+  },
+
+  {
     "epwalsh/obsidian.nvim",
-    tag = "*",  -- recommended, use latest release instead of latest commit
-    requires = {
-      -- Required.
-      "nvim-lua/plenary.nvim",
-
-      -- see below for full list of optional dependencies 👇
-    },
+    version = "*",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("obsidian").setup({
         workspaces = {
@@ -20,10 +26,21 @@ return require('packer').startup(function(use)
           },
         },
 
+        daily_notes = {
+          folder = "Daily Notes",
+          date_format = "%Y %b %d",
+          template = "Daily Note",
+          pass_over_todos = true,
+        },
+
+        templates = {
+          folder = "Templates",
+        },
+
         follow_url_func = function(url)
-          vim.fn.jobstart({"open", url})  -- Mac OS
+          vim.fn.jobstart({ "open", url })
         end,
       })
     end,
-  })
-end)
+  },
+}

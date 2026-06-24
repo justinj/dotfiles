@@ -8,3 +8,6 @@ set sw=2
 set colorcolumn=80
 set conceallevel=1
 set ignorecase
+
+noremap <Leader>d :ObsidianToday<cr>
+noremap <C-p> :Telescope find_files<cr>
