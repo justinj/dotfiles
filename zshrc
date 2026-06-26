@@ -12,22 +12,31 @@ SAVEHIST=10000
 setopt appendhistory
 
 # Prompt
-## Copied from https://medium.com/pareture/simplest-zsh-prompt-configs-for-git-branch-name-3d01602a6f33
 
-# Find and set branch name var if in git repository.
-function git_branch_name()
-{
-  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-  if [[ $branch == "" ]];
-  then
-    :
+setopt prompt_subst
+
+function jj_info() {
+  jj root &>/dev/null || return
+
+  local prefix full rest change_display bookmark
+  prefix=$(jj log -r @ --no-graph -T 'change_id.shortest().prefix()' 2>/dev/null) || return
+  [[ -z "$prefix" ]] && return
+  full=$(jj log -r @ --no-graph -T 'change_id.short(8)' 2>/dev/null)
+  rest="${full:${#prefix}}"
+  change_display="%F{cyan}${prefix}%F{yellow}${rest}"
+
+  bookmark=$(jj log -r @ --no-graph -T 'local_bookmarks.join(", ")' 2>/dev/null)
+
+  if [[ -z "$bookmark" ]]; then
+    bookmark=$(jj log -r 'latest(ancestors(@) & bookmarks())' --no-graph -T 'local_bookmarks.join(", ")' 2>/dev/null)
+    [[ -n "$bookmark" ]] && bookmark="~${bookmark}"
+  fi
+
+  if [[ -n "$bookmark" ]]; then
+    echo " %F{yellow}(${change_display}|${bookmark})%f"
   else
-    echo '- ('$branch')'
+    echo " %F{yellow}(${change_display})%f"
   fi
 }
 
-# Enable substitution in the prompt.
-setopt prompt_subst
-
-# Config for prompt. PS1 synonym.
-prompt='%2/ $(git_branch_name) > '
+prompt='%F{cyan}%2/%f$(jj_info) %F{blue}>%f '
